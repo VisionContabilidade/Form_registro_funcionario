@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .icon-buttons {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      
+    </style>
+  </head>
+  <body id="inicio">
+    
+    <div class="container">
+      <div class="py-4 text-center">
+        <img class="d-block mx-auto mb-4" src="LOGO-150x150_fundo_transparente.png" alt="" width="82" height="77">
+        <h1>Registro de funcionario</h1>
+        <p class="lead">
+          Preencha os campos abaixo para gerar o link de registro do funcionario
+        </p>
+      </div>
+      <hr style="margin-bottom: 60px;">
+      <div class="col-md-7 col-lg-8 container" id="div_form">
+    <form class="needs-validation" novalidate id="validado">
+      <div class="row g-3">
+        <div class="col-12">
+          <div class="form-floating">
+          
+          <select style="margin-bottom: 16px;" class="form-select" name="cpfoucnpj" id="cpfoucnpj" >
+            <option value="">Escolher...</option>
+            <option value="CNPJ">CNPJ</option>
+            <option value="CPF">CPF</option>
+            
+          </select>
+          <label for="cpfoucnpj" id="label_cnpj_ou_cpf" >Sua empresa possui CPF ou CNPJ?</label>
+        </div>
+      </div>
+      </div>
+        <div id="parte2_form" class="row g-3" style="display: none;">
+        <div class="col-12">
+          <div class="form-floating">
+        
+        <input
+          class="form-control"
+          type="text"
+          name="cnpj"
+          id="cnpj_empresa"
+          required
+          placeholder="00.000.000/0000-00"
+          maxlength="18"
+        >
+        <label id="label" for="cnpj_empresa"> </label>
+        <div class="invalid-feedback">
+          Cnpj da empresa é obrigatorio.
+        </div>
+      </div>
+    </div>
+
+        <div class="col-12">
+          <div class="form-floating">
+         
+          <input
+          class="form-control"
+            type="text"
+            name="empresa"
+            id="empresa"
+            required
+            placeholder="Digite aqui"           
+          >
+          <label for="empresa"> Nome da empresa</label>
+          <div class="invalid-feedback">
+            Nome da empresa é obrigatorio.
+          </div>
+        </div>
+        </div>
+        <div class="col-12">
+          <div class="form-floating">
+          
+          <input
+            class="form-control"
+            type="email"
+            name="email_da_empresa"
+            id="email_da_empresa"
+            required
+            placeholder="E-mail">
+            <label for="email_da_empresa">E-mail para retorno</label>
+            <div class="invalid-feedback">
+              E-mail para retorno é obrigatorio.
+            </div>
+        </div>
+      </div>
+        
+        <h2 class="">Dados do funcionario</h2>
+        
+        <div class="col-12">
+          <div class="form-floating">
+          
+          <input
+            class="form-control"
+            type="text"
+            name="cpf_funcionario"
+            id="cpf_funcionario"
+            required
+            placeholder="000.000.000-00"
+            onkeyup="formatarCPF(this)"
+            maxlength="14"
+          >
+          <label class="form-label" for="cpf_funcionario"> CPF do funcionario</label>
+        </div>
+      </div>
+        <div class="col-12">
+          <div class="form-floating">
+        
+        <input
+          class="form-control"
+          type="text"
+          name="nome_funcionario"
+          id="nome_funcionario"
+          required
+          placeholder="Digite aqui"
+        >
+        <label for="nome_funcionario">Nome do funcionario</label>
+      </div>
+    </div>
+        <div class="col-12">
+          <div class="form-floating">
+          
+          <input
+            class="form-control"
+            type="email"
+            name="email_funcionario"
+            id="email_funcionario"
+            required
+            placeholder="E-mail">
+            <label for="email_funcionario">E-mail do funcionario</label>
+        </div>
+      </div>
+        <div class="col-12" >
+          <div class="form-floating">
+          
+          <input
+            class="form-control"
+            type="text"
+            name="telefone_funcionario"
+            id="telefone_funcionario" 
+            required
+            placeholder="(00) 00000-0000"
+            onkeyup="formatarTel(this)"
+            maxlength="15"
+          >
+          <label for="telefone_funcionario">Telefone do funcionario</label>
+        </div>
+      </div>
+        <hr class="my-4" >
+        
+        <button id="button_gerar" class="w-100 btn btn-primary btn-lg" type="button" onclick="generateLink()">Gerar Link para o funcionario</button>
+        <a href="#inicio">
+        <button id="button_edit" style="display: none;" class="w-100 btn btn-outline-primary btn-lg" type="button" onclick="reniciar()">Alterar</button>
+        </a>
+      <div style="display: none;" id="copiar_link" class="container my-5">
+      <div class="row mb-5 text-center">
+        <div class="col-md-9">
+        <textarea class="form-control" rows="5" id="link" readonly ></textarea>
+      </div>
+      
+        <div class="icon-buttons nav col-md-3 justify-content-left list-unstyled d-flex" style="margin: 0;">
+          <button type="button" class="teste btn btn-outline-secondary mx-2 mb-2 ms-3" onclick="copiarTexto()" id="copiador" style="width: 100%;">
+            <i class="fas fa-copy"></i> Copiar
+          </button>
+          <button class="teste btn btn-outline-success mx-2 mb-2 ms-3" type="button" onclick="link_zap()" style="width: 100%;">
+            <i class="fab fa-whatsapp"><a id="link_a_zap" style="display: none"></a></i> WhatsApp
+          </button>
+          <button type="button" class="teste btn btn-outline-primary mx-2 ms-3" onclick="sendEmail()" style="width: 100%;">
+            <i class="fas fa-envelope"><a id="gerar_email"></a></i> Email
+          </button>
+        </div>
+      </div>
+      <button type="button" id="prosseguir" onclick="buttonProsseguir()" class="w-100 btn btn-primary btn-lg">Prosseguir pela empresa</button>
+    </div>
+    
+    </div>
+    </div>
+    </form>
+  </div>
+    <hr class="my-4">
+      </div>
+      
+      
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2010–2023 Vision</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacidade</a></li>
+        <li class="list-inline-item"><a href="#">Termos</a></li>
+        <li class="list-inline-item"><a href="#">Suport</a></li>
+      </ul>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+      
+
+      function sendEmail(){
+         
+         const encoded = encodeURIComponent(document.getElementById("link").innerHTML);
+          document.getElementById("gerar_email").setAttribute("href", "mailto:" + document.getElementById("email_funcionario").value + "?subject=Link de acesso&body=" + encoded);
+          document.getElementById("gerar_email").click();
+      
+      }
+
+       function copiarTexto() {
+        let textoCopiado = document.getElementById("link");
+        textoCopiado.select();
+        textoCopiado.setSelectionRange(0, 99999);
+       
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        document.getElementById("copiador").innerHTML = "Copiado!";
+        setTimeout(function() {          
+          document.getElementById("copiador").innerHTML = "<i class='fas fa-copy'></i> Copiar";     
+  }, 1000);               
+    }
+    
+      var selectOption = document.getElementById("cpfoucnpj");
+  var labelText = document.getElementById("label");
+
+  selectOption.addEventListener("change", function() {
+    labelText.innerHTML = "Qual o " + selectOption.value + " da empresa?";
+    document.getElementById("cnpj_empresa").placeholder = selectOption.value == "CNPJ" ? "00.000.000/0000-00" : "000.000.000-00";
+    document.getElementById("parte2_form").style.display = selectOption.value == "CNPJ" ? "block" : "block";
+    document.getElementById("cnpj_empresa").setAttribute("maxlength", selectOption.value == "CNPJ" ? "18" : "14");
+    document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.value == "CNPJ" ? "formatarCNPJ(this)" : "formatarCPF(this)");
+    
+    
+
+  });
+      function reniciar(){
+        document.getElementById("button_gerar").style.removeProperty("display");
+        document.getElementById("button_edit").style.display = "none";
+        document.getElementById("copiar_link").style.display = "none";
+
+      }
+
+      function generateLink() {
+        document.getElementById("button_gerar").style.display = "none";
+        document.getElementById("button_edit").style.removeProperty("display");
+        document.getElementById("copiar_link").style.display = "block";
+        document.getElementById("button_edit").innerHTML = "Link gerado!";
+        
+        setTimeout(function() {                    
+          document.getElementById("button_edit").innerHTML = "Alterar";
+          document.getElementById("button_edit").classList.remove("btn-outline-primary");
+          document.getElementById("button_edit").classList.add("btn-light");
+  }, 1000);
+        var cnpj_empresa = document.getElementById("cnpj_empresa").value;
+        var empresa = encodeURIComponent(document.getElementById("empresa").value);
+        var email_da_empresa = document.getElementById("email_da_empresa").value;
+        var cpf_funcionario = document.getElementById("cpf_funcionario").value;
+        var nome_funcionario = encodeURIComponent(document.getElementById("nome_funcionario").value);
+        var email_funcionario = document.getElementById("email_funcionario").value;
+        var telefone_funcionario = document.getElementById("telefone_funcionario").value; 
+        
+        const tel_novo = arrumarTelefone(telefone_funcionario);
+        
+        var link = document.getElementById("link");
+        link.href =
+          "http://127.0.0.1:5500/novo_registro_etp2.html?" +
+          "&empresa=" +
+          empresa +
+          "&cpf_funcionario=" +
+          cpf_funcionario +
+          "&nome_funcionario=" +
+          nome_funcionario +
+          "&email_funcionario=" +
+          email_funcionario +
+          "&telefone_funcionario=" +
+          tel_novo +
+          "&cnpj_empresa=" +
+          cnpj_empresa +
+          "&email_da_empresa=" +
+          email_da_empresa;
+        link.style.display = "inline";
+        link.innerHTML =
+          "http://127.0.0.1:5500/novo_registro_etp2.html?" +
+          "&empresa=" +
+          empresa +
+          "&cpf_funcionario=" +
+          cpf_funcionario +
+          "&nome_funcionario=" +
+          nome_funcionario +
+          "&email_funcionario=" +
+          email_funcionario +
+          "&telefone_funcionario=" +
+          tel_novo +
+          "&cnpj_empresa=" +
+          cnpj_empresa +
+          "&email_da_empresa=" +
+          email_da_empresa;
+      }
+
+      function arrumarTelefone(telefone){
+        
+       const tel_novo = telefone.replace(/[^a-zA-Z0-9]/g, "");
+       return tel_novo;
+      }
+
+      function link_zap() {
+        let nome_funcionario = document.getElementById("nome_funcionario").value;
+        let link_a_zap = document.getElementById("link_a_zap");
+        let link = document.getElementById("link").innerHTML;
+        const telefone_funcionario = document.getElementById("telefone_funcionario").value;
+        const tel_novo = arrumarTelefone(telefone_funcionario);
+        const encoded = window.encodeURIComponent("Ola, " + nome_funcionario + " aqui está o link para registro \n" + link);
+        console.log(encoded);
+        link_a_zap.href = "https://api.whatsapp.com/send?phone=55" + tel_novo + "&text=" + encoded;
+       
+        window.open(link_a_zap.href, "_blank");
+      }
+      function formatarTel(campo){
+      var tel = campo.value;
+      tel = tel.replace(/\D/g, '');
+      tel = tel.replace(/^(\d{2})(\d)/g, '($1) $2');
+      tel = tel.replace(/(\d)(\d{4})$/, '$1-$2');
+      campo.value = tel;
+
+      }
+      function formatarCNPJ(campo) {
+    var cnpj = campo.value;
+    cnpj = cnpj.replace(/\D/g, '');
+    cnpj = cnpj.replace(/(\d{2})(\d)/, "$1.$2");
+    cnpj = cnpj.replace(/(\d{3})(\d)/, "$1.$2");
+    cnpj = cnpj.replace(/(\d{3})(\d)/, "$1/$2");
+    cnpj = cnpj.replace(/(\d{4})(\d)/, "$1-$2");
+    campo.value = cnpj;
+  }
+  function formatarCPF(campo) {
+    var cpf = campo.value;
+    cpf = cpf.replace(/\D/g, '');
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    campo.value = cpf;
+  }
+
+  function buttonProsseguir(){
+  
+    var link = document.getElementById("link").value;
+    window.open(link, "_blank");
+  }
+    </script>
+  </body>
+</html>

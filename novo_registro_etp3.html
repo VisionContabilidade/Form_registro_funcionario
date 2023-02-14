@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="helio.css" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h1>Coleta de dados para registro</h1>
+    <h2 id="nome_empresa_"></h2>
+    <h3 id="h3_nome_funcionario"></h3>
+    <form action="#">
+      <div id="campo_funcionario">
+        <div>
+          <label for="nome_funcionario"> Nome do funcionario:</label>
+          <input
+            type="text"
+            name="nome_funcionario"
+            id="nome_funcionario"
+            required
+            placeholder="Digite aqui"
+          />
+        </div>
+        <div>
+          <label for="cpf_funcionario"> CPF do funcionario</label>
+          <input
+            type="text"
+            name="cpf_funcionario"
+            id="cpf_funcionario"
+            required
+            placeholder="000.000.000-00"
+            pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})"
+          />
+        </div>
+        <div>
+          <label for="nascimento">Data de nascimento</label>
+          <input type="date" name="nascimento" id="data_nascimento_funcionario" required />
+        </div>
+        <div>
+          <label for="pis">Numero do PIS</label>
+          <input
+            type="text"
+            name="pis"
+            id="pis"
+            required
+            placeholder="Digite aqui"
+          />
+        </div>
+        <button type="submit">proximo</button>
+        
+      </div>
+    </form>
+    <form>
+      <label>Selecione uma opção:</label>
+      <input
+        type="radio"
+        name="option"
+        value="option1"
+        id="opt1"
+        onchange="showQuestions()"
+      />
+      <label for="opt1">Opção 1</label>
+      <input
+        type="radio"
+        name="option"
+        value="option2"
+        id="opt2"
+        onchange="showQuestions()"
+      />
+      <label for="opt2">Opção 2</label>
+
+      <div id="questions" style="display: none">
+        <label for="q1">Pergunta 1</label>
+        <input type="text" id="q1" />
+        <label for="q2">Pergunta 2</label>
+        <input type="text" id="q2" />
+      </div>
+      <input type="submit" value="Enviar" />
+    </form>
+
+    
+
+    
+ <ul id="formData"></ul>
+
+ <script>
+  function showQuestions() {
+    var selectedOption = document.querySelector(
+      'input[name="option"]:checked'
+    ).value;
+    if (selectedOption === "option2") {
+      document.getElementById("questions").style.display = "block";
+    } else {
+      document.getElementById("questions").style.display = "none";
+    }
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const cpf = urlParams.get("cpf");
+  const empresa = urlParams.get("empresa");
+  const nome = urlParams.get("nome_funcionario");
+  
+  document.getElementById("nome_funcionario").value = nome;
+  document.getElementById("cpf_funcionario").value = cpf;
+  document.getElementById("nome_empresa_").innerText = empresa;
+  document.getElementById("h3_nome_funcionario").innerText = 'Olá, ' + nome;
+</script>
+  </body>
+</html>

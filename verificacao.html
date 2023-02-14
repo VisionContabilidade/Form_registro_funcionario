@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            color: red;
+            display: block;
+            margin-top: 10px;
+        }
+        p{
+            display: inline;
+               color: black;
+               margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <span class="color">empresa<p id="empresa"></p></span>
+    <span class="color">cpf_funcionario<p id="cpf_funcionario"></p></span>
+    <span class="color">nome_funcionario<p id="nome_funcionario"> </p></span>
+    <span class="color">email_funcionario<p id="email_funcionario"></p></span>
+    <span class="color">telefone_funcionario<p id="telefone_funcionario"></p></span>
+    <span class="color">cnpj_empresa<p id="cnpj_empresa"></p></span>
+    <span class="color">email_da_empresa<p id="email_da_empresa"></p></span>
+    <span class="color">nome_social<p id="nome_social"></p></span>
+    <span class="color">data_nascimento<p id="data_nascimento"></p></span>
+    <span class="color">pais_nascimento<p id="pais_nascimento"></p></span>
+    <span class="color">estado_nascimento<p id="estado_nascimento"></p></span>
+    <span class="color">cidade_nascimento<p id="cidade_nascimento"></p></span>
+    <span class="color">sexo<p id="sexo"></p></span>
+    <span class="color">raca<p id="raca"></p></span>
+    <span class="color">estado_civil<p id="estado_civil"></p></span>
+    <span class="color">grau_instrucao<p id="grau_instrucao"></p></span>
+    <span class="color">tipo_de_rua<p id="tipo_de_rua"></p></span>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const empresa = urlParams.get("empresa");
+        const cpf_funcionario = urlParams.get("cpf_funcionario");
+        const nome_funcionario = urlParams.get("nome_funcionario");
+        const email_funcionario = urlParams.get("email_funcionario");
+        const telefone_funcionario = urlParams.get("telefone_funcionario");
+        const cnpj_empresa = urlParams.get("cnpj_empresa");
+        const email_da_empresa = urlParams.get("email_da_empresa");
+        const nome_social = urlParams.get("nome_social");
+        const data_nascimento = urlParams.get("data_nascimento");
+        const pais_nascimento = urlParams.get("pais_nascimento");
+        const estado_nascimento = urlParams.get("estado_nascimento");
+        const cidade_nascimento = urlParams.get("cidade_nascimento");
+        const sexo = urlParams.get("sexo");
+        const raca = urlParams.get("raca");
+        const estado_civil = urlParams.get("estado_civil");
+        const grau_instrucao = urlParams.get("grau_instrucao");
+        const tipo_de_rua = urlParams.get("tipo_de_rua");
+
+        document.getElementById("empresa").innerText = empresa;
+        document.getElementById("cpf_funcionario").innerText = cpf_funcionario;
+        document.getElementById("nome_funcionario").innerText =  nome_funcionario;
+        document.getElementById("email_funcionario").innerText = email_funcionario;
+        document.getElementById("telefone_funcionario").innerText = telefone_funcionario;
+        document.getElementById("cnpj_empresa").innerText = cnpj_empresa;
+        document.getElementById("email_da_empresa").innerText = email_da_empresa;
+        document.getElementById("nome_social").innerText = nome_social;
+        document.getElementById("data_nascimento").innerText = data_nascimento;
+        document.getElementById("pais_nascimento").innerText = pais_nascimento;
+        document.getElementById("estado_nascimento").innerText = estado_nascimento;
+        document.getElementById("cidade_nascimento").innerText = cidade_nascimento;
+        document.getElementById("sexo").innerText = sexo;
+        document.getElementById("raca").innerText = raca;
+        document.getElementById("estado_civil").innerText =  estado_civil;
+        document.getElementById("grau_instrucao").innerText = grau_instrucao;
+        document.getElementById("tipo_de_rua").innerText = tipo_de_rua;
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="helio.css">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div id="empresa">
+            <select name="cpfoucnpj" id="cpfoucnpj" form="cpf">
+                <option value=""></option>
+                <option value="cpf">CPF</option>
+                <option value="cnpj">CNPJ</option>
+            </select>
+            <label for="cpf"> Digite seu CPF:</label>
+            <input type="text" name="cpf" id="cpf" required placeholder="000.000.000-00" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+        </div>
+        <div>
+            <label for="empresa"> Nome da empresa:</label>
+            <input type="text" name="empresa" id="empresa_" required placeholder="Digite aqui">
+        </div>
+        <div>
+            <label for="cpf_funcionario"> cpf do funcionario:</label>
+            <input type="text" name="cpf_funcionario" id="cpf_funcionario" required placeholder="000.000.000-00" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+        </div>
+        <div>
+            <label for="nome_funcionario">Nome do funcionario</label>
+            <input type="text" name="nome_funcionario" id="nome_funcionario" required placeholder="Digite aqui">
+        </div>
+        <button type="button" onclick="generateLink()">Gerar Link</button>
+        <a id="link" style="display:none"></a>
+    </form>
+    <script>
+        function generateLink() {
+          var empresa = document.getElementById("empresa_").value;
+          var cpf = document.getElementById("cpf").value;
+          var link = document.getElementById("link");
+          link.href = "http://127.0.0.1:5500/novo_registro_etp2.html/page?name=" + empresa + "&cpf=" + cpf;
+          link.style.display = "inline";
+          link.innerHTML = "http://127.0.0.1:5500/novo_registro_etp2.html/page?name=" + empresa + "&cpf=" + cpf;
+        }
+      </script>
+</body>
+
+
+http://127.0.0.1:5500/novo_registro_etp2.html?&empresa=Contabeezy%20Inc&cpf_funcionario=090.576.919-81&nome_funcionario=Heitor%20Beckhauser%20Pires&email_funcionario=torbeckpires@gmail.com&telefone_funcionario=44998222692&cnpj_empresa=00.000.000/0000-00&email_da_empresa=contabeezy@gmail.com
+
+http://127.0.0.1:5500/novo_registro_etp2.html?&amp;empresa=Contabeezy%20Inc&amp;cpf_funcionario=090.576.919-81&amp;nome_funcionario=Heitor%20Beckhauser%20Pires&amp;email_funcionario=torbeckpires@gmail.com&amp;telefone_funcionario=44998222692&amp;cnpj_empresa=00.000.000/0000-00&amp;email_da_empresa=contabeezy@gmail.com
