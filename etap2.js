@@ -217,3 +217,4 @@ const urlParams = new URLSearchParams(window.location.search);
            });
          }, false);
        })();
+       console.log('teste');
