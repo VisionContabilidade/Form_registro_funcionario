@@ -145,3 +145,4 @@ function buttonProsseguir(){
 var link = document.getElementById("link").value;
 window.open(link, "_blank");
 }
+console.log('teste');
