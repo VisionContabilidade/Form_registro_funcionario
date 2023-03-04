@@ -189,10 +189,11 @@
     </div>
     </div>
     </form>
-  </div>
     <hr class="my-4">
-      </div>
-      <button></button>
+  </div>
+    
+      
+
       
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; 2010–2023 Vision</p>
@@ -257,7 +258,7 @@
           document.getElementById("button_edit").innerHTML = "Alterar";
           document.getElementById("button_edit").classList.remove("btn-outline-primary");
           document.getElementById("button_edit").classList.add("btn-light");
-  }, 1000);
+  }, 2000);
         var cnpj_empresa = document.getElementById("cnpj_empresa").value;
         var empresa = encodeURIComponent(document.getElementById("empresa").value);
         var email_da_empresa = document.getElementById("email_da_empresa").value;
@@ -265,6 +266,7 @@
         var nome_funcionario = encodeURIComponent(document.getElementById("nome_funcionario").value);
         var email_funcionario = document.getElementById("email_funcionario").value;
         var telefone_funcionario = document.getElementById("telefone_funcionario").value; 
+        var cpfoucnpj = document.getElementById("cpfoucnpj").value;
         
         const tel_novo = arrumarTelefone(telefone_funcionario);
         
@@ -301,7 +303,9 @@
           "&cnpj_empresa=" +
           cnpj_empresa +
           "&email_da_empresa=" +
-          email_da_empresa;
+          email_da_empresa +
+          "&cpfoucnpj=" +
+          cpfoucnpj;
       }
 
       function arrumarTelefone(telefone){
