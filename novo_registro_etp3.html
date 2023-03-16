@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="helio.css" />
     <title>Document</title>
   </head>
   <body id="inicio">
@@ -139,579 +137,11 @@
           <div class="form-floating">
           
           <input
-            class="form-control"
-            type="text"
-            name="telefone_funcionario"
-            id="telefone_funcionario" 
-            required
-            placeholder="(00) 00000-0000"
-            onkeyup="formatarTel(this)"
-            maxlength="15"
-          >
-          <label for="telefone_funcionario">Telefone do funcionario</label>
-        </div>
-      </div>
-        <hr class="my-4" >
-        
-        
-    
-    </div>
-    </div>
-    </form>
-  </div>
-    
-    <div class="container">
-      
-      <div class="col-md-7 col-lg-8 container">
-        <h4 class="mb-3">Dados pessoais</h1>
-        <form class="needs-validation" novalidate id="validado">
-        
-          <div class="row g-3" id="dados_pessoais_trabalhador">
-          
-          <div class="col-sm-6">
-           <div class="form-floating">
-            <input
-            class="form-control"
             type="text"
             name="nome_funcionario"
             id="nome_funcionario"
             required
             placeholder="Digite aqui"
-
-          />
-          
-          <label  for="nome_funcionario" > Nome do funcionario</label>
-          <div class="invalid-feedback">
-            Nome é obrigatorio.
-          </div>
-         </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="form-floating">
-          <input
-          class="form-control"
-            type="text"
-            name="nome_social"
-            id="nome_social"
-            required
-            placeholder="Digite aqui"
-          />
-          <label  for="nome_social">Nome social</label>
-          <div class="invalid-feedback">
-            Nome social é obrigatorio.
-          </div>
-        </div>
-      </div>
-        <div class="col-12">
-          <div class="form-floating">
-          <input
-          class="form-control"
-            type="date"
-            name="data_nascimento"
-            id="data_nascimento"
-            required
-          />
-          <label  for="data_nascimento">Data de nascimento</label>
-          <div class="invalid-feedback">
-            Data de nascimento é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <span>Local de nascimento:</span>
-        <div class="col-md-3">
-          <div class="form-floating">          
-          <input
-            class="form-control"
-            type="text"
-            name="pais_nascimento"
-            id="pais_nascimento"
-            required
-            value="Brasil"
-          />
-          <label for="pais_nascimento">Pais:</label>
-          <div class="invalid-feedback">
-            Pais de nascimento é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-floating">
-          
-          <input
-            class="form-control"
-            type="text"
-            name="estado_nascimento"
-            id="estado_nascimento"
-            required
-            placeholder="."
-          />
-          <label  for="estado_nascimento">Estado</label>
-          <div class="invalid-feedback">
-            Estado de nascimento é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <div class="col-md-5">
-          <div class="form-floating">
-          
-          <input
-            style="margin-bottom: 2px;"
-            class="form-control"
-            type="text"
-            name="cidade_nascimento"
-            id="cidade_nascimento"
-            required
-            placeholder="."
-          />
-          <label for="cidade_nascimento">Cidade</label>
-          <div class="invalid-feedback">
-            Cidade de nascimento é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <hr class="my-4">
-        
-        <div class="col-12" style="margin-top: 0;">
-          <div class="form-floating">
-          
-          <select class="form-select" name="sexo" id="sexo" form="sexo" required>
-            <option value="">Selecionar...</option>
-            <option value="M">Masculino</option>
-            <option value="F">Feminino</option>
-          </select>
-          <label  for="sexo">Sexo:</label>
-          <div class="invalid-feedback">
-          Sexo é obrigatorio.
-          </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="form-floating">
-          
-          <select class="form-select" name="raca" id="raca" form="raca" required>
-            <option value="">Selecionar...</option>
-            <option value="1">Branca</option>
-            <option value="2">Preta</option>
-            <option value="3">Parda</option>
-            <option value="4">Amarela</option>
-            <option value="5">Indigena</option>
-            <option value="6">Não informado</option>
-          </select>
-          <label for="raca">Raça/Cor</label>
-          <div class="invalid-feedback">
-          Raça é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <div class="col-12">
-          <div class="form-floating">
-       
-        <select class="form-select" name="estado_civil" id="estado_civil" form="estado_civil" required>
-          <option value="">Selecionar...</option>
-          <option value="1">Solteiro(a)</option>
-          <option value="2">Casado(a)</option>
-          <option value="3">Divorciado(a)</option>
-          <option value="4">Separado(a)</option>
-          <option value="5">Viúvo(a)</option>
-        </select>
-        <label for="estado_civil">Estado Civil:</label>
-          <div class="invalid-feedback">
-            Estado civil é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <div class="col-12">
-          <div class="form-floating">
-          
-          <select 
-          required
-            class="form-select"
-            name="grau_instrucao"
-            id="grau_instrucao"
-            form="grau_instrucao"
-            style="margin-bottom: 2px;"
-          >
-            <option value="">Selecionar...</option>
-            <option value="01">Analfabeto</option>
-            <option value="04">Ensino Fundamental Incompleto</option>
-            <option value="05">Ensino Fundamental Completo</option>
-            <option value="06">Ensino Médio Incompleto</option>
-            <option value="07">Ensino Médio Completo</option>
-            <option value="08">Ensino Superior Incompleto</option>
-            <option value="09">Ensino Superior Completo</option>
-            <option value="10">Pós-graduação completa</option>
-            <option value="11">Mestrado completo</option>
-            <option value="12">Doutorado completo</option>
-          </select>
-          <label class="form-label" for="grau_instrucao">Escolaridade</label>
-          <div class="invalid-feedback">
-            Grau de instrução é obrigatorio.
-          </div>
-        </div>
-        </div>
-          
-        <hr class="my-4">
-        
-        <div class="col-12" style="margin-top: 0;">
-          <div class="form-floating">
-          
-          <select required class="form-select" name="tipo_de_rua" id="tipo_de_rua" required>
-            <option value="">Selecionar...</option>
-            <option value="R">Rua</option>
-            <option value="AV">Avenida</option>
-            <option value="ROD">Rodovia</option>
-            <option value="SIT">Sitio</option>
-            <option value="A">Área</option>
-            <option value="AL">Alameda</option>
-            <option value="V">Via</option>
-            <option value="A V">Área Verde</option>
-            <option value="AC">Acesso</option>
-            <option value="ACA">Acampamento</option>
-            <option value="ACL">Acesso Local</option>
-            <option value="AD">Adro</option>
-            <option value="AE">Área Especial</option>
-            <option value="AER">Aeroporto</option>
-            <option value="ALD">Aldeia</option>
-            <option value="AMD">Avenida Marginal Direita</option>
-            <option value="AME">Avenida Marginal Esquerda</option>
-            <option value="AN">Anel Viário</option>
-            <option value="ANT">Antiga Estrada</option>
-            <option value="ART">Artéria</option>
-            <option value="AT">Alto</option>
-            <option value="ATL">Atalho</option>
-            <option value="AVC">Avenida Contorno</option>
-            <option value="AVM">Avenida Marginal</option>
-            <option value="AVV">Avenida Velha</option>
-            <option value="BAL">Balneário</option>
-            <option value="BC">Beco</option>
-            <option value="BCO">Buraco</option>
-            <option value="BEL">Belvedere</option>
-            <option value="BL">Bloco</option>
-            <option value="BLO">Balão</option>
-            <option value="BLS">Blocos</option>
-            <option value="BLV">Bulevar</option>
-            <option value="BSQ">Bosque</option>
-            <option value="BVD">Boulevard</option>
-            <option value="BX">Baixa</option>
-            <option value="C">Cais</option>
-            <option value="CAL">Calçada</option>
-            <option value="CAM">Caminho</option>
-            <option value="CAN">Canal</option>
-            <option value="CH">Chácara</option>
-            <option value="CHA">Chapadão</option>
-            <option value="CIC">Ciclovia</option>
-            <option value="CIR">Circular</option>
-            <option value="CJ">Conjunto</option>
-            <option value="CJM">Conjunto Mutirão</option>
-            <option value="CMP">Complexo Viário</option>
-            <option value="COL">Colônia</option>
-            <option value="COM">Comunidade</option>
-            <option value="CON">Condomínio</option>
-            <option value="COND">Condomínio</option>
-            <option value="COR">Corredor</option>
-            <option value="CPO">Campo</option>
-            <option value="CRG">Córrego</option>
-            <option value="CTN">Contorno</option>
-            <option value="DSC">Descida</option>
-            <option value="DSV">Desvio</option>
-            <option value="DT">Distrito</option>
-            <option value="EB">Entre Bloco</option>
-            <option value="EIM">Estrada Intermunicipal</option>
-            <option value="ENS">Enseada</option>
-            <option value="ENT">Entrada Particular</option>
-            <option value="EQ">Entre Quadra</option>
-            <option value="ESC">Escada</option>
-            <option value="ESD">Escadaria</option>
-            <option value="ESE">Estrada Estadual</option>
-            <option value="ESI">Estrada Vicinal</option>
-            <option value="ESL">Estrada de Ligação</option>
-            <option value="ESM">Estrada Municipal</option>
-            <option value="ESP">Esplanada</option>
-            <option value="ESS">Estrada de Servidão</option>
-            <option value="EST">Estrada</option>
-            <option value="ESV">Estrada Velha</option>
-            <option value="ETA">Estrada Antiga</option>
-            <option value="ETC">Estação</option>
-            <option value="ETD">Estádio</option>
-            <option value="ETN">Estância</option>
-            <option value="ETP">Estrada Particular</option>
-            <option value="ETT">Estacionamento</option>
-            <option value="EVA">Evangélica</option>
-            <option value="EVD">Elevada</option>
-            <option value="EX">Eixo Industrial</option>
-            <option value="FAV">Favela</option>
-            <option value="FAZ">Fazenda</option>
-            <option value="FER">Ferrovia</option>
-            <option value="FNT">Fonte</option>
-            <option value="FRA">Feira</option>
-            <option value="FTE">Forte</option>
-            <option value="GAL">Galeria</option>
-            <option value="GJA">Granja</option>
-            <option value="HAB">Núcleo Habitacional</option>
-            <option value="IA">Ilha</option>
-            <option value="IGP">Igarapé</option>
-            <option value="IND">Indeterminado</option>
-            <option value="IOA">Ilhota</option>
-            <option value="JD">Jardim</option>
-            <option value="JDE">Jardinete</option>
-            <option value="LD">Ladeira</option>
-            <option value="LGA">Lagoa</option>
-            <option value="LGO">Lago</option>
-            <option value="LOT">Loteamento</option>
-            <option value="LRG">Largo</option>
-            <option value="LT">Lote</option>
-            <option value="MER">Mercado</option>
-            <option value="MNA">Marina</option>
-            <option value="MOD">Modulo</option>
-            <option value="MRG">Projeção</option>
-            <option value="MRO">Morro</option>
-            <option value="MTE">Monte</option>
-            <option value="NUC">Núcleo</option>
-            <option value="NUR">Núcleo Rural</option>
-            <option value="O">Outros</option>
-            <option value="OUT">Outeiro</option>
-            <option value="PAR">Paralela</option>
-            <option value="PAS">Passeio</option>
-            <option value="PAT">Pátio</option>
-            <option value="PC">Praça</option>
-            <option value="PCE">Praça de Esportes</option>
-            <option value="PDA">Parada</option>
-            <option value="PDO">Paradouro</option>
-            <option value="PNT">Ponta</option>
-            <option value="PR">Praia</option>
-            <option value="PRL">Prolongamento</option>
-            <option value="PRM">Parque Municipal</option>
-            <option value="PRQ">Parque</option>
-            <option value="PRR">Parque Residencial</option>
-            <option value="PSA">Passarela</option>
-            <option value="PSG">Passagem</option>
-            <option value="PSP">Passagem de Pedestre</option>
-            <option value="PSS">Passagem Subterrânea</option>
-            <option value="PTE">Ponte</option>
-            <option value="PTO">Porto</option>
-            <option value="Q">Quadra</option>
-            <option value="QTA">Quinta</option>
-            <option value="QTS">Quintas</option>
-            <option value="R I">Rua Integração</option>
-            <option value="R L">Rua de Ligação</option>
-            <option value="R P">Rua Particular</option>
-            <option value="R V">Rua Velha</option>
-            <option value="RAM">Ramal</option>
-            <option value="RCR">Recreio</option>
-            <option value="REC">Recanto</option>
-            <option value="RER">Retiro</option>
-            <option value="RES">Residencial</option>
-            <option value="RET">Reta</option>
-            <option value="RLA">Ruela</option>
-            <option value="RMP">Rampa</option>
-            <option value="ROA">Rodo Anel</option>
-            <option value="ROT">Rotula</option>
-            <option value="RPE">Rua de Pedestre</option>
-            <option value="RPR">Margem</option>
-            <option value="RTN">Retorno</option>
-            <option value="RTT">Rotatória</option>
-            <option value="SEG">Segunda Avenida</option>
-            <option value="SRV">Servidão</option>
-            <option value="ST">Setor</option>
-            <option value="SUB">Subida</option>
-            <option value="TCH">Trincheira</option>
-            <option value="TER">Terminal</option>
-            <option value="TR">Trecho</option>
-            <option value="TRV">Trevo</option>
-            <option value="TUN">Túnel</option>
-            <option value="TV">Travessa</option>
-            <option value="TVP">Travessa Particular</option>
-            <option value="TVV">Travessa Velha</option>
-            <option value="UNI">Unidade</option>
-            <option value="V C">Via Coletora</option>
-            <option value="V L">Via Local</option>
-            <option value="V-E">Via Expressa</option>
-            <option value="VAC">Via de Acesso</option>
-            <option value="VAL">Vala</option>
-            <option value="VCO">Via Costeira</option>
-            <option value="VD">Viaduto</option>
-            <option value="VER">Vereda</option>
-            <option value="VEV">Via Elevado</option>
-            <option value="VL">Vila</option>
-            <option value="VLA">Viela</option>
-            <option value="VLE">Vale</option>
-            <option value="VLT">Via Litorânea</option>
-            <option value="VPE">Via de Pedestre</option>
-            <option value="VRT">Variante</option>
-            <option value="ZIG">Zigue-Zague</option>
-          </select>
-          <label class="mb-3" class="form-label" for="tipo_de_rua">Tipo de endereço</label>
-          <div class="invalid-feedback">
-            Tipo de endereço é obrigatorio.
-          </div>
-        </div>
-      </div>
-        <div class="col">
-          <div class="form-floating">
-          
-          <input
-            class="form-control"
-            type="text"
-            name="endereco"
-            id="endereco"
-            required
-            placeholder="Digite aqui"
-          />
-          <label class="form-label" for="endereco">Endereço</label>
-          <div class="invalid-feedback">
-            Endereço é obrigatorio.
-          </div>
-
-        </div>
-        </div>
-        <div class="col">
-          <div class="form-floating">
-          
-          <input
-            class="form-control"
-            type="text"
-            name="bairro"
-            id="bairro"
-            placeholder="Digite aqui"
-            required
-          />
-          <label for="bairro">Bairro</label>
-          <div class="invalid-feedback">
-            Bairro é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <div class="col">
-          <div class="form-floating">
-          
-          <input
-            class="form-control"
-            type="text"
-            name="numero"
-            id="numero"
-            required
-            placeholder="Digite aqui"
-          />
-          <label for="numero">Numero</label>
-          <div class="invalid-feedback">
-            Numero é obrigatorio.
-          </div>
-          </div>
-        </div>
-        
-        <div class="col-12" >
-          <div class="form-floating">
-          
-          <input
-          class="form-control"
-            type="text"
-            name="cep"
-            id="cep"
-            required
-            placeholder="Digite aqui"
-            oninput="addDash(this)"
-            maxlength="9"
-          />
-          <label  for="cep">CEP</label>
-          <div class="invalid-feedback">
-            CEP é obrigatorio.
-          </div>
-        </div>
-        </div>
-        <hr class="my-4">
-        <span style="margin-top: 0;">Possui alguma deficiencia?</span>
-        <div class="form-check">
-          <input
-          required
-            class="form-check-input" 
-            type="radio"
-            id="deficiencia_sim"
-            name="deficiencia"
-            value="s"
-            onchange="showQuestions()"
-          />
-          <label  for="deficiencia_sim">Sim</label>
-        </div>
-        <div class="form-check">
-          <input
-          required
-            class="form-check-input"
-            type="radio"
-            id="deficiencia_nao"
-            name="deficiencia"
-            value="n"
-            onchange="showQuestions()"
-          />
-          <label for="deficiencia_nao">Nao</label>
-          <div class="invalid-feedback">
-            Possui alguma deficiencia é obrigatorio.
-          </div>
-        </div>
-        
-        <h6 id="h6_def_none" style="display: none;">Quais?</h6>
-        <div class="container" id="deficiencia_none" style="display: none">
-          
-          <div class="row">
-          <div class="col-sm" >
-            <input
-              
-              type="checkbox"
-              name="infoDeficiencia"
-              id="defFisica"
-              value="s"
-            />
-            <label class="form-check-label" for="q1">Física</label>
-          </div>
-          <div class="col-sm">
-            <input
-              type="checkbox"
-              name="infoDeficiencia"
-              id="defVisual"
-              value="S"
-            />
-            <label for="q2">Visual</label>
-          </div>
-          <div class="col-sm">
-            <input
-              type="checkbox"
-              name="infoDeficiencia"
-              id="defAuditiva"
-              value="S"
-            />
-            <label for="q3">Auditiva</label>
-          </div>
-          <div class="col-sm">
-            <input
-              type="checkbox"
-              name="infoDeficiencia"
-              id="defMental"
-              value="S"
-            />
-            <label for="q4">Mental</label>
-          </div>
-          <div class="col-sm">
-            <input
-              type="checkbox"
-              name="infoDeficiencia"
-              id="defIntelectual"
-              value="S"
-            />
-            <label for="q5">Intelectual</label>
-          </div>
-        </div>
-        </div>
-        <hr class="my-2" style="color: white;">
-        <span id="span">Possui algum dependente?</span>
-        <div class="form-check">
-          <input
-          required
-            class="form-check-input"
-            type="radio"
-            id="dependente_sim"
-            name="dependente"
-            value="s"
-            onchange="showQuestions2()"
-            required
           />
           <label for="dependente_sim">Sim</label>  
       </div>
@@ -1122,18 +552,8 @@
             
           </div>
         </div>
-      </div>
-
-    </div>
-           
-    </div>
-    
-      <div class="row g-3" id="dados_documentos_trabalhador" >
-        
-        <h1>Documentos</h1>
-        <div class="col-12">
-          <div class="form-floating">
-          
+        <div>
+          <label for="cpf_funcionario"> CPF do funcionario</label>
           <input
           class="form-control"
             type="text"
@@ -1198,42 +618,65 @@
             required
             placeholder="Digite aqui"
           />
-          <label for="pis">Numero do PIS</label>
-          <div class="invalid-feedback">
-            Numero do PIS é obrigatorio.
-          </div>
         </div>
-        </div>
-        <hr class="my-3" >
-        <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-          <label for="floatingTextarea2">Observação</label>
-        </div>
+        <button type="submit">proximo</button>
+        
       </div>
-      
-<hr class="my-5" >
-      
-      
-      
     </form>
-  </div>
-  </div>
-      
-      
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">&copy; 2010–2023 Vision</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacidade</a></li>
-        <li class="list-inline-item"><a href="#">Termos</a></li>
-        <li class="list-inline-item"><a href="#">Suport</a></li>
-      </ul>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <form>
+      <label>Selecione uma opção:</label>
+      <input
+        type="radio"
+        name="option"
+        value="option1"
+        id="opt1"
+        onchange="showQuestions()"
+      />
+      <label for="opt1">Opção 1</label>
+      <input
+        type="radio"
+        name="option"
+        value="option2"
+        id="opt2"
+        onchange="showQuestions()"
+      />
+      <label for="opt2">Opção 2</label>
 
-    <script src="checkout.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  </body>
+      <div id="questions" style="display: none">
+        <label for="q1">Pergunta 1</label>
+        <input type="text" id="q1" />
+        <label for="q2">Pergunta 2</label>
+        <input type="text" id="q2" />
+      </div>
+      <input type="submit" value="Enviar" />
+    </form>
+
+    
+
+    
+ <ul id="formData"></ul>
+
+ <script>
+  function showQuestions() {
+    var selectedOption = document.querySelector(
+      'input[name="option"]:checked'
+    ).value;
+    if (selectedOption === "option2") {
+      document.getElementById("questions").style.display = "block";
+    } else {
+      document.getElementById("questions").style.display = "none";
+    }
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const cpf = urlParams.get("cpf");
+  const empresa = urlParams.get("empresa");
+  const nome = urlParams.get("nome_funcionario");
   
+  document.getElementById("nome_funcionario").value = nome;
+  document.getElementById("cpf_funcionario").value = cpf;
+  document.getElementById("nome_empresa_").innerText = empresa;
+  document.getElementById("h3_nome_funcionario").innerText = 'Olá, ' + nome;
+</script>
+  </body>
 </html>
