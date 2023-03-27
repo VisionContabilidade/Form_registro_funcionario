@@ -658,12 +658,12 @@
         </div>
       </div>
       <div id="none_5" class="text-center">
-        <button type="button" class="btn btn-primary" onclick="addDependente()">Adicionar mais dependentes</button>
+        <button id="button_dependente_1" type="button" class="btn btn-primary" onclick="addDependente()">Adicionar mais dependentes</button>
       </div>
     </div>
       <div id="div_dependente_2" style="display: none;" class="row g-3" >        
         <hr class="my-2">
-        <div class="row">
+        <div class="row" id="">
           <h6 class="col-auto me-auto" id="h6_dependente_2">Dependente 2</h6>
           <button  type="button" class="col-auto btn btn-outline-danger btn-sm" onclick="limparDepentes2()" >Remover</button>
         </div>
@@ -738,7 +738,7 @@
         </div>
         
       </div>
-      <div class="text-center">
+      <div class="text-center" id="div_dep_2">
         <button type="button" id="button_dependente_2" class="btn btn-primary" onclick="addDependente2()" style="display: none;">Adicionar mais dependentes</button>
       </div>
       <div id="div_dependente_3" style="display: none;" class="row g-3" >

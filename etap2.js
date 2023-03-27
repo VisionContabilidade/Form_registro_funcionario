@@ -106,30 +106,48 @@ const urlParams = new URLSearchParams(window.location.search);
         document.getElementById("data_nascimento_dependente").value = "";
         document.getElementById("cpf_dependente").value = "";
         document.getElementById("tipo_dependente").value = "";
+        document.getElementById("div_dependente_1").style.display = "none";
+        document.getElementById("div_geral_dependente").style.display = "none";
+        
+
         }
         function limparDepentes2(){
         document.getElementById("nome_dependente_2").value = "";
         document.getElementById("data_nascimento_dependente_2").value = "";
         document.getElementById("cpf_dependente_2").value = "";
         document.getElementById("tipo_dependente_2").value = "";
+        document.getElementById("div_dependente_2").style.display = "none";
+        document.getElementById("button_dependente_2").style.display = "none";
+        document.getElementById("none_5").style.display = "block";
         }
         function limparDepentes3(){
         document.getElementById("nome_dependente_3").value = "";
         document.getElementById("data_nascimento_dependente_3").value = "";
         document.getElementById("cpf_dependente_3").value = "";
         document.getElementById("tipo_dependente_3").value = "";
+        document.getElementById("div_dependente_3").style.display = "none";
+        document.getElementById("button_dependente_3").style.display = "none";
+        document.getElementById("button_dependente_2").style.removeProperty("display");
+        
         }
         function limparDepentes4(){
         document.getElementById("nome_dependente_4").value = "";
         document.getElementById("data_nascimento_dependente_4").value = "";
         document.getElementById("cpf_dependente_4").value = "";
         document.getElementById("tipo_dependente_4").value = "";
+        document.getElementById("div_dependente_4").style.display = "none";
+        document.getElementById("button_dependente_4").style.display = "none";
+        document.getElementById("button_dependente_3").style.removeProperty("display");
         }
         function limparDepentes5(){
         document.getElementById("nome_dependente_5").value = "";
         document.getElementById("data_nascimento_dependente_5").value = "";
         document.getElementById("cpf_dependente_5").value = "";
         document.getElementById("tipo_dependente_5").value = "";
+        document.getElementById("div_dependente_5").style.display = "none";
+        document.getElementById("button_dependente_5").style.display = "none";
+        document.getElementById("button_dependente_4").style.removeProperty("display");
+        document.getElementById("button_dependente_4").style.display = "block";
         }
 
       function generateLink() {
