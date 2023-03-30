@@ -6,7 +6,7 @@ const urlParams = new URLSearchParams(window.location.search);
       const nome_funcionario = urlParams.get("nome_funcionario");
       const email_funcionario = urlParams.get("email_funcionario");
       const telefone_funcionario = urlParams.get("telefone_funcionario");
-
+      const cpfoucnpj = urlParams.get("cpfoucnpj");
       
       document.getElementById("nome_funcionario").value = nome_funcionario;
       document.getElementById("cpf_funcionario").value = cpf_funcionario;
@@ -151,6 +151,7 @@ const urlParams = new URLSearchParams(window.location.search);
         }
 
       function generateLink() {
+        console.log("oi");
         var nome_social = document.getElementById("nome_social").value;
         var data_nascimento = document.getElementById("data_nascimento").value;
         var pais_nascimento = document.getElementById("pais_nascimento").value;
@@ -164,16 +165,52 @@ const urlParams = new URLSearchParams(window.location.search);
         var grau_instrucao = document.getElementById("grau_instrucao").value;
         var tipo_de_rua = document.getElementById("tipo_de_rua").value;
         var endereço = document.getElementById("endereco").value;
+        var bairro = document.getElementById("bairro").value;
         var numero = document.getElementById("numero").value;
+        var cep = document.getElementById("cep").value;
+        var deficiencia = document.querySelector('input[name="deficiencia"]:checked').value;
+        var defFisica = document.getElementById("defFisica").value;
+        var defVisual = document.getElementById("defVisual").value;
+        var defAuditiva = document.getElementById("defAuditiva").value;
+        var defMental = document.getElementById("defMental").value;
+        var defIntelectual = document.getElementById("defIntelectual").value;
+        var dependente = document.querySelector('input[name="dependente"]:checked').value;        
+        var nome_dependente = document.getElementById("nome_dependente").value;
+        var data_nascimento_dependente = document.getElementById("data_nascimento_dependente").value;
+        var cpf_dependente = document.getElementById("cpf_dependente").value;
+        var tipo_dependente = document.getElementById("tipo_dependente").value;
+        var nome_dependente_2 = document.getElementById("nome_dependente_2").value;
+        var data_nascimento_dependente_2 = document.getElementById("data_nascimento_dependente_2").value;
+        var cpf_dependente_2 = document.getElementById("cpf_dependente_2").value;
+        var tipo_dependente_2 = document.getElementById("tipo_dependente_2").value;
+        var nome_dependente_3 = document.getElementById("nome_dependente_3").value;
+        var data_nascimento_dependente_3 = document.getElementById("data_nascimento_dependente_3").value;
+        var cpf_dependente_3 = document.getElementById("cpf_dependente_3").value;
+        var tipo_dependente_3 = document.getElementById("tipo_dependente_3").value;
+        var nome_dependente_4 = document.getElementById("nome_dependente_4").value;
+        var data_nascimento_dependente_4 = document.getElementById("data_nascimento_dependente_4").value;
+        var cpf_dependente_4 = document.getElementById("cpf_dependente_4").value;
+        var tipo_dependente_4 = document.getElementById("tipo_dependente_4").value;
+        var nome_dependente_5 = document.getElementById("nome_dependente_5").value;
+        var data_nascimento_dependente_5 = document.getElementById("data_nascimento_dependente_5").value;
+        var cpf_dependente_5 = document.getElementById("cpf_dependente_5").value;
+        var tipo_dependente_5 = document.getElementById("tipo_dependente_5").value;
+        
+        var rg_funcionario = document.getElementById("rg_funcionario").value;
+        var orgao_emissor = document.getElementById("orgao_emissor").value;
+        var uf_emissor = document.getElementById("uf_emissor").value;
+        var pis = document.getElementById("pis").value;
+        var floatingTextarea2 = document.getElementById("floatingTextarea2").value;
         //dadoos vindo da etapa 1
         var empresa = document.getElementById("empresa").textContent;
         var cpf_funcionario = document.getElementById("cpf_funcionario").value;
-        var nome_funcionario =
-          document.getElementById("nome_funcionario").value;
+        var nome_funcionario = document.getElementById("nome_funcionario").value;
 
         var link = document.getElementById("link");
         link.href =
-          "http://127.0.0.1:5500/verificacao.html?" +
+          "http://127.0.0.1:5500/novo_registro_etp3.html?" +
+          "&cpfoucnpj=" +
+          cpfoucnpj +
           "&empresa=" +
           empresa +
           "&cpf_funcionario=" +
@@ -207,7 +244,80 @@ const urlParams = new URLSearchParams(window.location.search);
           "&grau_instrucao=" +
           grau_instrucao +
           "&tipo_de_rua=" +
-          tipo_de_rua;
+          tipo_de_rua +
+          "&endereco=" +
+          endereço +
+          "&bairro=" +
+          bairro +
+          "&numero=" +
+          numero +
+          "&cep=" +
+          cep +
+          "&deficiencia=" +
+          deficiencia +
+          "&defFisica=" +
+          defFisica +
+          "&defVisual=" +
+          defVisual +
+          "&defAuditiva=" +
+          defAuditiva +
+          "&defMental=" +
+          defMental +
+          "&defIntelectual=" +
+          defIntelectual +
+          "&dependente=" +
+          dependente +
+          "&nome_dependente=" +
+          nome_dependente +
+          "&data_nascimento_dependente=" +
+          data_nascimento_dependente +
+          "&cpf_dependente=" +
+          cpf_dependente +
+          "&tipo_dependente=" +
+          tipo_dependente +
+          "&nome_dependente_2=" +
+          nome_dependente_2 +
+          "&data_nascimento_dependente_2=" +
+          data_nascimento_dependente_2 +
+          "&cpf_dependente_2=" +
+          cpf_dependente_2 +
+          "&tipo_dependente_2=" +
+          tipo_dependente_2 +
+          "&nome_dependente_3=" +
+          nome_dependente_3 +
+          "&data_nascimento_dependente_3=" +
+          data_nascimento_dependente_3 +
+          "&cpf_dependente_3=" +
+          cpf_dependente_3 +
+          "&tipo_dependente_3=" +
+          tipo_dependente_3 +
+          "&nome_dependente_4=" +
+          nome_dependente_4 +
+          "&data_nascimento_dependente_4=" +
+          data_nascimento_dependente_4 +
+          "&cpf_dependente_4=" +
+          cpf_dependente_4 +
+          "&tipo_dependente_4=" +
+          tipo_dependente_4 +
+          "&nome_dependente_5=" +
+          nome_dependente_5 +
+          "&data_nascimento_dependente_5=" +
+          data_nascimento_dependente_5 +
+          "&cpf_dependente_5=" +
+          cpf_dependente_5 +
+          "&tipo_dependente_5=" +
+          tipo_dependente_5 +
+          "&rg_funcionario=" +
+          rg_funcionario +
+          "&orgao_emissor=" +
+          orgao_emissor +
+          "&uf_emissor=" +
+          uf_emissor +
+          "&pis=" +
+          pis +
+          "&floatingTextarea2=" +
+          floatingTextarea2;
+        console.log(link.href);
         window.open(link, "_blank");
       } 
       

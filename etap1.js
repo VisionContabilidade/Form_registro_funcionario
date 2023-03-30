@@ -50,6 +50,7 @@ document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.val
      document.getElementById("button_edit").classList.remove("btn-outline-primary");
      document.getElementById("button_edit").classList.add("btn-light");
 }, 1000);
+   var cpfoucnpj = document.getElementById("cpfoucnpj").value;
    var cnpj_empresa = document.getElementById("cnpj_empresa").value;
    var empresa = encodeURIComponent(document.getElementById("empresa").value);
    var email_da_empresa = document.getElementById("email_da_empresa").value;
@@ -63,6 +64,8 @@ document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.val
    var link = document.getElementById("link");
    link.href =
      "http://127.0.0.1:5500/novo_registro_etp2.html?" +
+     "&cpfoucnpj=" +
+      cpfoucnpj +
      "&empresa=" +
      empresa +
      "&cpf_funcionario=" +
