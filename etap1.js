@@ -83,6 +83,8 @@ document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.val
    link.style.display = "inline";
    link.innerHTML =
      "http://127.0.0.1:5500/novo_registro_etp2.html?" +
+     "&cpfoucnpj=" +
+      cpfoucnpj +
      "&empresa=" +
      empresa +
      "&cpf_funcionario=" +

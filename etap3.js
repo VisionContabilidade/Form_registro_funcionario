@@ -1,11 +1,12 @@
-var selectOption = document.getElementById("cpfoucnpj");
-var labelText = document.getElementById("label");
-selectOption.addEventListener("change", function() {
-	labelText.innerHTML = "Qual o " + selectOption.value + " da empresa?";
-	document.getElementById("cnpj_empresa").placeholder = selectOption.value == "CNPJ" ? "00.000.000/0000-00" : "000.000.000-00";
-	document.getElementById("cnpj_empresa").setAttribute("maxlength", selectOption.value == "CNPJ" ? "18" : "14");
-	document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.value == "CNPJ" ? "formatarCNPJ(this)" : "formatarCPF(this)");
-	});
+// var selectOption = document.getElementById("cpfoucnpj");
+// var labelText = document.getElementById("label");
+// selectOption.addEventListener("change", function() {
+// 	labelText.innerHTML = "Qual o " + selectOption.value + " da empresa?";
+// 	document.getElementById("cnpj_empresa").placeholder = selectOption.value == "CNPJ" ? "00.000.000/0000-00" : "000.000.000-00";
+// 	document.getElementById("cnpj_empresa").setAttribute("maxlength", selectOption.value == "CNPJ" ? "18" : "14");
+// 	document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.value == "CNPJ" ? "formatarCNPJ(this)" : "formatarCPF(this)");
+// 	});
+
 
 	function showQuestions2(){
         var selectedOption = document.querySelector('input[name="dependente"]:checked').value;
@@ -130,6 +131,12 @@ campo.value = cpf;
 
 const urlParams = new URLSearchParams(window.location.search);
 	let cpfoucnpj = urlParams.get("cpfoucnpj");
+	if (cpfoucnpj == "cpf"){
+		document.getElementById("label").innerHTML = "Qual o Cpf" + " da empresa?";
+	}
+	else{
+		document.getElementById("label").innerHTML = "Qual o Cnpj" + " da empresa?";
+	}
 	let cnpj_empresa = urlParams.get("cnpj_empresa");
 	let empresa = urlParams.get("empresa");
 	let cpf_funcionario = urlParams.get("cpf_funcionario");
@@ -189,6 +196,7 @@ document.getElementById("cnpj_empresa").value = cnpj_empresa;
 document.getElementById("empresa").value = empresa;
 document.getElementById("cpf_funcionario").value = cpf_funcionario;
 document.getElementById("nome_funcionario").value = nome_funcionario;
+document.getElementById("nome_funcionario_").value = nome_funcionario;
 document.getElementById("email_funcionario").value = email_funcionario;
 document.getElementById("telefone_funcionario").value = telefone_funcionario;
 document.getElementById("email_da_empresa").value = email_da_empresa;
@@ -208,6 +216,7 @@ document.getElementById("numero").value = numero;
 document.getElementById("cep").value = cep;
 if (deficiencia == "s") {
 	document.getElementById("deficiencia_sim").checked = true;
+	showQuestions();
 }
 else if (deficiencia == "n") {
 	document.getElementById("deficiencia_nao").checked = true;
@@ -217,8 +226,40 @@ document.getElementById("defVisual").value = defVisual;
 document.getElementById("defAuditiva").value = defAuditiva;
 document.getElementById("defMental").value = defMental;
 document.getElementById("defIntelectual").value = defIntelectual;
+	if (defFisica == "s"){
+		document.getElementById("defFisica").checked = true;
+	}
+	if (defVisual == "s"){
+		document.getElementById("defVisual").checked = true;
+	}
+	if (defAuditiva == "s"){
+		document.getElementById("defAuditiva").checked = true;
+	}
+	if (defMental == "s"){
+		document.getElementById("defMental").checked = true;
+	}
+	if (defIntelectual == "s"){
+		document.getElementById("defIntelectual").checked = true;
+	}
+
+else if (deficiencia == "n") {
+	document.getElementById("deficiencia_nao").checked = true;
+}
 if (dependente == "s") {
 	document.getElementById("dependente_sim").checked = true;
+	showQuestions2();
+	if (nome_dependente_2 != "") {
+		addDependente();
+	}
+	if (nome_dependente_3 != "") {
+		addDependente2();
+	}
+	if (nome_dependente_4 != "") {
+		addDependente3();
+	}
+	if (nome_dependente_5 != "") {
+		addDependente4();
+	}
 }
 else if (dependente == "n") {
 	document.getElementById("dependente_nao").checked = true;
