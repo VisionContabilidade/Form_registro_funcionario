@@ -209,7 +209,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
         var link = document.getElementById("link");
         link.href =
-          "http://127.0.0.1:5500/novo_registro_etp3.html?" +
+          "https://www.escritoriovision.com.br/novo_registro_etp3.html?" +
           "&cpfoucnpj=" +
           cpfoucnpj +
           "&empresa=" +
