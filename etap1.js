@@ -24,10 +24,10 @@ var labelText = document.getElementById("label");
 
 selectOption.addEventListener("change", function() {
 labelText.innerHTML = "Qual o " + selectOption.value + " da empresa?";
-document.getElementById("cnpj_empresa").placeholder = selectOption.value == "CNPJ" ? "00.000.000/0000-00" : "000.000.000-00";
-document.getElementById("parte2_form").style.display = selectOption.value == "CNPJ" ? "block" : "block";
-document.getElementById("cnpj_empresa").setAttribute("maxlength", selectOption.value == "CNPJ" ? "18" : "14");
-document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.value == "CNPJ" ? "formatarCNPJ(this)" : "formatarCPF(this)");
+document.getElementById("cnpj_empresa").placeholder = selectOption.value == "cnpj" ? "00.000.000/0000-00" : "000.000.000-00";
+document.getElementById("parte2_form").style.display = selectOption.value == "cnpj" ? "block" : "block";
+document.getElementById("cnpj_empresa").setAttribute("maxlength", selectOption.value == "cnpj" ? "18" : "14");
+document.getElementById("cnpj_empresa").setAttribute("onkeyup", selectOption.value == "cnpj" ? "formatarCNPJ(this)" : "formatarCPF(this)");
 
 
 

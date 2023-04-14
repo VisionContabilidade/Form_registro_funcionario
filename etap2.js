@@ -91,6 +91,7 @@ const urlParams = new URLSearchParams(window.location.search);
           document.getElementById("deficiencia_none").style.display = "block";
           document.getElementById("h6_def_none").style.display = "block";
         } else {
+          
           document.getElementById("deficiencia_none").style.display = "none";
           document.getElementById("h6_def_none").style.display = "none";
         }

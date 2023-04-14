@@ -221,11 +221,7 @@ if (deficiencia == "s") {
 else if (deficiencia == "n") {
 	document.getElementById("deficiencia_nao").checked = true;
 }
-document.getElementById("defFisica").value = defFisica;
-document.getElementById("defVisual").value = defVisual;
-document.getElementById("defAuditiva").value = defAuditiva;
-document.getElementById("defMental").value = defMental;
-document.getElementById("defIntelectual").value = defIntelectual;
+
 	if (defFisica == "s"){
 		document.getElementById("defFisica").checked = true;
 	}
