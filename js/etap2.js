@@ -94,6 +94,7 @@ const urlParams = new URLSearchParams(window.location.search);
           
           document.getElementById("deficiencia_none").style.display = "none";
           document.getElementById("h6_def_none").style.display = "none";
+          document.querySelectorAll('input[name="infoDeficiencia"]').forEach((x) => x.checked = false);
         }
       }
       function showSecondHalf() {
