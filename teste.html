@@ -1,51 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="helio.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Teste tabela</title>
+
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+        .t{
+            margin: 10px;
+            text-align: center;
+        }
+        .t p{
+            font-size: 0.7rem;
+        }
+        #datas span{
+            font-size: 1.2rem;
+            display: block;
+            margin: 10px;
+            
+        }
+        hr{
+            margin: 0;
+        }
+        .form-control{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-style: none;
+            
+        }
+        .spanPequeno{
+            font-size: 0.7rem;
+            
+        }
+    
+    </style>
 </head>
 <body>
-    <form>
-        <div id="empresa">
-            <select name="cpfoucnpj" id="cpfoucnpj" form="cpf">
-                <option value=""></option>
-                <option value="cpf">CPF</option>
-                <option value="cnpj">CNPJ</option>
-            </select>
-            <label for="cpf"> Digite seu CPF:</label>
-            <input type="text" name="cpf" id="cpf" required placeholder="000.000.000-00" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+    <div class="container-md">
+        <div id="datasCalculada" class="row">
+            <div class="col t" style="background-color: red;">  <p>horas semanais</p> </div>
+            <div class="col t">DOM <p></p></div>
+            <div class="col t">Seg <p></p></div>
+            <div class="col t">Ter <p></p></div>
+            <div class="col t">Qua <p></p></div>
+            <div class="col t">Qui <p></p></div>
+            <div class="col t">Sex <p></p></div>
+            <div class="col t">Sab <p></p></div>    
         </div>
-        <div>
-            <label for="empresa"> Nome da empresa:</label>
-            <input type="text" name="empresa" id="empresa_" required placeholder="Digite aqui">
+        <div id="situacaoDoFuncionario" class="row">
+            <div class="col"></div>
+            
+            
+            <span class="col">Entrada</span>
+            <span class="col">Pausa</span>
+            <span class="col">Retorno</span>
+            <span class="col">Saída</span>
+            <span class="col">Sem pausa</span>
+            <div class="col"></div>
         </div>
-        <div>
-            <label for="cpf_funcionario"> cpf do funcionario:</label>
-            <input type="text" name="cpf_funcionario" id="cpf_funcionario" required placeholder="000.000.000-00" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+        <div id="tabela" class="row">
+            <div id="datas" class="col row text-lg-center font-weight-bold">
+                <span class="col">DOM</span>
+                <span class="col">Seg</span>
+                <span class="col">Ter</span>
+                <span class="col">Qua</span>
+                <span class="col">Qui</span>
+                <span class="col">Sex</span>
+                <span class="col">Sab</span>
+            </div>
+            <div id="inputs" class="col row border">
+                
+                 <div class="col align-self-center">
+                 <input type="time" class="form-control" id="entradaDom">
+                 <hr>
+                 </div>
+                 <div class="col align-self-center">
+                 <input type="time" class="form-control" id="entradaSeg">
+                 <hr>
+                 </div>
+                 <div class="col align-self-center">
+                 <input type="time" class="form-control" id="entradaTer">
+                 <hr>
+                 </div>
+                 <div class="col align-self-center">
+                 <input type="time" class="form-control" id="entradaQua">
+                 <hr>
+                 </div>
+                 <div class="col align-self-center">
+                 <input type="time" class="form-control" id="entradaQui">
+                 <hr>
+                 </div>
+                 <div class="col align-self-center">
+                    <input type="time" class="form-control" id="entradaSex">
+                    <hr>
+                 </div>
+                 <div class="col align-self-center">
+                    <input type="time" class="form-control" id="entradaSab">
+                    <hr>
+                 </div>
+            </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
         </div>
-        <div>
-            <label for="nome_funcionario">Nome do funcionario</label>
-            <input type="text" name="nome_funcionario" id="nome_funcionario" required placeholder="Digite aqui">
-        </div>
-        <button type="button" onclick="generateLink()">Gerar Link</button>
-        <a id="link" style="display:none"></a>
-    </form>
-    <script>
-        function generateLink() {
-          var empresa = document.getElementById("empresa_").value;
-          var cpf = document.getElementById("cpf").value;
-          var link = document.getElementById("link");
-          link.href = "http://127.0.0.1:5500/novo_registro_etp2.html/page?name=" + empresa + "&cpf=" + cpf;
-          link.style.display = "inline";
-          link.innerHTML = "http://127.0.0.1:5500/novo_registro_etp2.html/page?name=" + empresa + "&cpf=" + cpf;
-        }
-      </script>
+    </div>
+
 </body>
-
-
-http://127.0.0.1:5500/novo_registro_etp2.html?&empresa=Contabeezy%20Inc&cpf_funcionario=090.576.919-81&nome_funcionario=Heitor%20Beckhauser%20Pires&email_funcionario=torbeckpires@gmail.com&telefone_funcionario=44998222692&cnpj_empresa=00.000.000/0000-00&email_da_empresa=contabeezy@gmail.com
-
-http://127.0.0.1:5500/novo_registro_etp2.html?&amp;empresa=Contabeezy%20Inc&amp;cpf_funcionario=090.576.919-81&amp;nome_funcionario=Heitor%20Beckhauser%20Pires&amp;email_funcionario=torbeckpires@gmail.com&amp;telefone_funcionario=44998222692&amp;cnpj_empresa=00.000.000/0000-00&amp;email_da_empresa=contabeezy@gmail.com
+</html>
